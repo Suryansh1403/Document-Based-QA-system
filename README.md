@@ -3,7 +3,7 @@
 This is a document based quation answering system build in nextjs.
 How does this work :
 
- . Firstly user will upload a docuemnt.\n
+ . Firstly user will upload a docuemnt.
  . Then that document is broken down into chunks 
  . Then i have used a Sentence transformer from HugginFace which all All-MiniLm.
  . This converts the document chunks into the vector embedding which are then stored in pinecone database.
