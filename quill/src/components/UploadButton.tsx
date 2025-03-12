@@ -15,11 +15,7 @@ import { DialogTitle } from '@radix-ui/react-dialog'
 import { UploadButton as UploadThingUploadButton } from '@/lib/uploadthing'
 
 
-const UploadButton = ({
-  isSubscribed,
-}: {
-  isSubscribed: boolean
-}) => {
+const UploadButton = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const router = useRouter()
   const { mutate: startPolling } = trpc.getFile.useMutation(

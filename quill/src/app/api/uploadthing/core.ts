@@ -2,9 +2,7 @@ import { db } from "@/db";
 import getPineconeClient from "@/lib/pinecone";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
-import { UploadThingError } from "uploadthing/server";
-import { PineconeStore } from '@langchain/pinecone';
-import { OpenAIEmbeddings } from '@langchain/openai';
+
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 
 import { pipeline } from '@xenova/transformers';
@@ -62,30 +60,7 @@ export const ourFileRouter = {
         
             const pagesAmt = pageLevelDocs.length
             const texts = pageLevelDocs.map(doc => doc.pageContent);
-            // const { subscriptionPlan } = metadata
-            // const { isSubscribed } = subscriptionPlan
-        
-            // const isProExceeded =
-            //   pagesAmt >
-            //   PLANS.find((plan) => plan.name === 'Pro')!.pagesPerPdf
-            // const isFreeExceeded =
-            //   pagesAmt >
-            //   PLANS.find((plan) => plan.name === 'Free')!
-            //     .pagesPerPdf
-        
-            // if (
-            //   (isSubscribed && isProExceeded) ||
-            //   (!isSubscribed && isFreeExceeded)
-            // ) {
-            //   await db.file.update({
-            //     data: {
-            //       uploadStatus: 'FAILED',
-            //     },
-            //     where: {
-            //       id: createdFile.id,
-            //     },
-            //   })
-            // }
+
         
             const pinecone = await getPineconeClient()
             const pineconeIndex = pinecone.Index('quill')
