@@ -1,7 +1,7 @@
 # Document-Based-QA-system
 
-This is a document based quation answering system build in nextjs.
-How does this work :
+# This is a document based quation answering system build in nextjs.
+# How does this work :
 
  . Firstly user will upload a docuemnt.
  . Then that document is broken down into chunks 
